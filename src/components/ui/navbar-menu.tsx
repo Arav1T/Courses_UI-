@@ -12,7 +12,9 @@ const transition = {
   restDelta: 0.001,
   restSpeed: 0.001,
 };
-
+type HoveredLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  children: React.ReactNode;
+};
 export const MenuItem = ({
   setActive,
   active,
@@ -109,7 +111,7 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, ...rest }: HoveredLinkProps) => {
   return (
     <a
       {...rest}

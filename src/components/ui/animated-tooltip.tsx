@@ -30,16 +30,18 @@ export const AnimatedTooltip = ({
   // translate the tooltip
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
-    springConfig,
+    springConfig, 
   );
-  const handleMouseMove = (event: any) => {
-    const halfWidth = event.target.offsetWidth / 2;
-    x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
-  };
+  const handleMouseMove = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+  const imgElement = event.currentTarget as HTMLImageElement;
+  const halfWidth = imgElement.offsetWidth / 2;
+  x.set(event.nativeEvent.offsetX - halfWidth);
+};
+
 
   return (
     <>
-      {items.map((item, idx) => (
+      {items.map((item) => (
         <div
           className="group relative -mr-4"
           key={item.name}

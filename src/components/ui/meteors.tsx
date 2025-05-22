@@ -62,7 +62,7 @@ export const Meteors = ({
   useEffect(() => {
     // Set screen width on mount
     setScreenWidth(window.innerWidth);
-
+    console.log(screenWidth)
     // Optional: Update on window resize
     const handleResize = () => setScreenWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
