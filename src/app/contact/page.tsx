@@ -4,14 +4,14 @@ import { BackgroundBeams } from "@/components/ui/background-beams"
 import { Meteors } from "@/components/ui/meteors"
 import { FormEvent, useRef, useState } from "react";
 import emailjs from 'emailjs-com'
-export default function page() {
+export default function Page() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const form= useRef<FormEvent>()
+  const form= useRef<HTMLFormElement>(null)
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    emailjs.sendForm("service_m0b6uk4","template_m620nxn",form.current,"YYrzHY9eELkjphqfn")
+    emailjs.sendForm("service_m0b6uk4","template_m620nxn",form.current!,"YYrzHY9eELkjphqfn")
     console.log('Submitted:', { email, message });
   };
   return (

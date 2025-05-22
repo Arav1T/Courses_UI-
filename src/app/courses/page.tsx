@@ -13,7 +13,7 @@ interface Course{
         isFeatured: boolean,
         image:string
 }
-export default function page() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-black py-12 pt-36">
        <h1 className="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-white">All courses ({courses.length})</h1>
